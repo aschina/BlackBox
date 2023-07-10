@@ -14,11 +14,12 @@ android {
         versionCode 12
         versionName "2.1.0"
 
-        flavorDimensions "BlackBox32"
+        flavorDimensions "BlackBox64"
     }
 
     productFlavors {
         BlackBox32 {
+            dimension "BlackBox32"
             applicationId "top.niunaijun.blackboxa32"
             ndk {
                 abiFilters "armeabi-v7a"
@@ -29,6 +30,7 @@ android {
         }
 
         BlackBox64 {
+            dimension "BlackBox64"
             applicationId "top.niunaijun.blackboxa64"
             ndk {
                 abiFilters "arm64-v8a"
@@ -39,6 +41,7 @@ android {
         }
 
         BlackBox32Beta {
+            dimension "BlackBox32Beta"
             applicationId "top.niunaijun.blackboxa32_beta"
             ndk {
                 abiFilters "armeabi-v7a"
@@ -49,6 +52,7 @@ android {
         }
 
         BlackBox64Beta {
+            dimension "BlackBox64Beta"
             applicationId "top.niunaijun.blackboxa64_beta"
             ndk {
                 abiFilters "arm64-v8a"
