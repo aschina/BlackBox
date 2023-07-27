@@ -14,10 +14,20 @@ android {
         versionCode 12
         versionName "2.1.0"
 
-        flavorDimensions "BlackBox64"
+        flavorDimensions "BlackBox"
     }
 
     productFlavors {
+        BlackBox {
+            dimension "BlackBox"
+            applicationId "top.niunaijun.blackboxa64"
+            ndk {
+                abiFilters "armeabi-v7a", 'arm64-v8a'
+            }
+            resValue "string", "app_name", "BlackBox"
+            manifestPlaceholders = [APP_ICON      : "@mipmap/ic_launcher",
+                                    APP_ROUND_ICON: "@mipmap/ic_launcher_round"]
+        }
         BlackBox32 {
             dimension "BlackBox32"
             applicationId "top.niunaijun.blackboxa32"

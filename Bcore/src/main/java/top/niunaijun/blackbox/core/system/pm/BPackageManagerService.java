@@ -692,12 +692,6 @@ public class BPackageManagerService extends IBPackageManagerService.Stub impleme
                 return result.installError("getPackageArchiveInfo error.Please check whether APK is normal.");
             }
 
-            boolean support = AbiUtils.isSupport(apkFile);
-            if (!support) {
-                String msg = packageArchiveInfo.applicationInfo.loadLabel(BlackBoxCore.getPackageManager()) + "[" + packageArchiveInfo.packageName + "]";
-                return result.installError(packageArchiveInfo.packageName,
-                        msg + "\n" + (BlackBoxCore.is64Bit() ? "The box does not support 32-bit Application" : "The box does not support 64-bit Application"));
-            }
             PackageParser.Package aPackage = parserApk(apkFile.getAbsolutePath());
             if (aPackage == null) {
                 return result.installError("parser apk error.");
